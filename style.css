@@ -1,0 +1,66 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+#page {
+  display: grid;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#page {
+  grid-template-rows: 150px 50px 1fr 50px;
+  grid-template-areas: 
+    "head"
+    "nav"
+    "main"
+    "foot";
+}
+
+@media only screen and (min-width: 600px) {
+  #page {
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 150px 1fr 50px;
+    grid-template-areas: 
+      "head head"
+      "nav main"
+      "nav foot";
+  }
+}
+
+
+#page > header {
+  grid-area: head;
+  background-color: pink;
+}
+
+#page > nav {
+  grid-area: nav;
+  background-color: deepskyblue;
+}
+
+#page > main {
+  grid-area: main;
+  background-color: yellow;
+  overflow-y: scroll;
+}
+
+#page > footer {
+  grid-area: foot;
+  background-color: lightgreen;
+}
+
+#items {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.item {
+  height: 150px;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin: 5px;
+}
